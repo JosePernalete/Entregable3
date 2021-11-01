@@ -1,0 +1,23 @@
+package Test;
+
+import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
+
+public class GestorOlim {
+
+}
+
+
+
+
+
+
+
+@Override
+  public void paint (Graphics g){
+	 ImageIcon image = new ImageIcon(getClass().getResource("Images/logoOlimpic.jpg"));
+	 g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),this);
+	 super.paint(g);
+   }    
+ }

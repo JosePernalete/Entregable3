@@ -1,0 +1,70 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class home {
+    public static void main(String[] args) {
+        Inicio inicio = new Inicio();
+        inicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
+
+class Inicio extends JFrame {
+    private JButton paisBoton;
+    private JButton deportista;
+    private JButton disciplina;
+    private JButton sinDefinir1;
+    private JButton sinDefinir2;
+    private JButton sinDefinir3;
+    private JButton sinDefinir4;
+    private JButton sinDefinir5;
+    private JButton sinDefinir6;
+
+    public Inicio() {
+        setSize(500, 500);
+        setResizable(false);
+        setTitle("Gestor de Olimpiadas");
+        setVisible(true);
+        setLayout(new GridLayout(3, 3, 80, 80));
+        paisBoton = new JButton("PAIS");
+        deportista = new JButton("DEPORTISTA");
+        disciplina = new JButton("DISCIPLINA");
+        sinDefinir1 = new JButton("SIN DEFINIR");
+        sinDefinir2 = new JButton("SIN DEFINIR");
+        sinDefinir3 = new JButton("SIN DEFINIR");
+        sinDefinir4 = new JButton("SIN DEFINIR");
+        sinDefinir5 = new JButton("SIN DEFINIR");
+        sinDefinir6 = new JButton("SIN DEFINIR");
+        
+
+        ActionListener abrirDeportista = new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                deportistas deportista = new deportistas();
+            }
+        };
+
+        deportista.addActionListener(abrirDeportista);
+
+        ActionListener abrirPais = new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                pais pais = new pais();
+            }
+        };
+
+        paisBoton.addActionListener(abrirPais);
+
+        // ImageIcon deportistaIcono = new ImageIcon("deportista.png");
+        // deportista.setIcon(new ImageIcon("deportista.png"));
+        this.add(deportista);
+        this.add(paisBoton);
+        this.add(disciplina);
+        this.add(sinDefinir1);
+        this.add(sinDefinir2);
+        this.add(sinDefinir3);
+        this.add(sinDefinir4);
+        this.add(sinDefinir5);
+        this.add(sinDefinir6);
+    }
+}

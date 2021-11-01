@@ -1,0 +1,59 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Graphics;
+import javax.swing.*;
+
+
+public class home {
+    public static void main(String[] args) {
+        Inicio inicio = new Inicio();
+        inicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        inicio.setSize(500, 500);
+        inicio.setResizable(true);
+        inicio.setTitle("Gestor de Olimpiadas");
+        inicio.setVisible(true);
+        inicio.setLayout(new GridLayout(1,1,100,100));
+    }
+    
+}
+
+class Inicio extends JFrame {
+    private JButton paisBoton;
+    private JButton deportista;
+    private JButton disciplina;
+
+    public Inicio() {
+        paisBoton = new JButton("PAIS");
+        deportista = new JButton("DEPORTISTA");
+        disciplina = new JButton("DISCIPLINA");
+        		
+        ActionListener abrirDeportista = new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                deportistas deportista = new deportistas();
+            }
+        };
+
+        deportista.addActionListener(abrirDeportista);
+
+        ActionListener abrirPais = new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                pais pais = new pais();
+            }
+        };
+
+        paisBoton.addActionListener(abrirPais);
+
+        this.add(deportista);
+        this.add(paisBoton);
+        this.add(disciplina);
+    }
+    
+  @Override
+      public void paint (Graphics g){
+      	    ImageIcon image = new ImageIcon(getClass().getResource("Images/logoOlimpic.jpg"));
+        	g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),this);
+    	    super.paint(g);
+      }    
+}
+
