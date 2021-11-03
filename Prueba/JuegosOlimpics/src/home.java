@@ -1,22 +1,35 @@
-package Entregable3.Prueba.JuegosOlimpics.src;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Graphics;
 import javax.swing.*;
 
 public class home {
     public static void main(String[] args) {
+        System.out.println("JE");
+        // ParteSuperior superior = new ParteSuperior();
         Inicio inicio = new Inicio();
-        inicio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        inicio.setSize(500, 500);
-        inicio.setResizable(false);
-        inicio.setTitle("Gestor de Olimpiadas");
-        inicio.setVisible(true);
-        inicio.setLayout(new GridLayout(3, 3, 100, 100));
     }
 
+}
+
+class ParteSuperior extends JFrame {
+
+    private JButton config;
+
+    public ParteSuperior() {
+        setLayout(new FlowLayout());
+        setVisible(true);
+        setSize(500, 200);
+        this.add(config);
+        ActionListener abrirConfig = new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                Settings conf = new Settings();
+            }
+        };
+
+        config.addActionListener(abrirConfig);
+    }
 }
 
 class Inicio extends JFrame {
@@ -34,13 +47,21 @@ class Inicio extends JFrame {
     private JButton sinDefinir6;
 
     public Inicio() {
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 500);
+        setResizable(false);
+        setTitle("Gestor de Olimpiadas");
+        setVisible(true);
+        setLayout(new GridLayout(3, 3, 100, 100));
+
         paisButton = new JButton("PAIS");
         deportistaBoton = new JButton("DEPORTISTA");
         disciplinaBoton = new JButton("DISCIPLINA");
 
         ActionListener abrirDeportista = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                deportistas deportista = new deportistas();
+                Deportistas deportista = new Deportistas();
             }
         };
 
@@ -48,7 +69,7 @@ class Inicio extends JFrame {
 
         ActionListener abrirPais = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                pais pais = new pais();
+                Country pais = new Country();
             }
         };
 

@@ -1,13 +1,12 @@
-package Entregable3.Prueba.JuegosOlimpics.src;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import java.awt.*;
 
-public class pais extends JFrame {
+public class Country extends JFrame {
 
-    public pais() {
+    public Country() {
         setVisible(true);
         setSize(500, 500);
         setResizable(false);
