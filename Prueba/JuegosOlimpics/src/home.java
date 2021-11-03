@@ -2,6 +2,11 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+<<<<<<< HEAD
+=======
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
+>>>>>>> aad8098 (paises)
 import javax.swing.*;
 
 public class home {
@@ -33,6 +38,7 @@ class ParteSuperior extends JFrame {
 }
 
 class Inicio extends JFrame {
+<<<<<<< HEAD
     private JButton paisButton;
     private JButton deportistaBoton;
     private JButton disciplinaBoton;
@@ -45,6 +51,12 @@ class Inicio extends JFrame {
     private JButton sinDefinir4;
     private JButton sinDefinir5;
     private JButton sinDefinir6;
+=======
+    private JButton paisBoton;
+    private JButton deportista;
+    private JButton disciplina;
+
+>>>>>>> aad8098 (paises)
 
     public Inicio() {
 
@@ -73,6 +85,7 @@ class Inicio extends JFrame {
             }
         };
 
+<<<<<<< HEAD
         paisButton.addActionListener(abrirPais);
 
         this.add(deportistaBoton);
@@ -85,6 +98,23 @@ class Inicio extends JFrame {
         this.add(new JButton("SIN DEFINIR"));
         this.add(new JButton("SIN DEFINIR"));
     }
+=======
+        paisBoton.addActionListener(abrirPais);
+
+        this.add(deportista);
+        this.add(paisBoton);
+        this.add(disciplina);
+    }
+    
+@Override
+      public void paint (Graphics g){
+      	    ImageIcon image = new ImageIcon(getClass().getResource("Images/logoOlimpic.jpg"));
+        	g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),this);
+    	    super.paint(g);
+    	  
+      }  
+}
+>>>>>>> aad8098 (paises)
 
     /*
      * @Override public void paint (Graphics g){ ImageIcon image = new
