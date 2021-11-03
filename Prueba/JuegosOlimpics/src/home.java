@@ -1,9 +1,10 @@
+package Entregable3.Prueba.JuegosOlimpics.src;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Graphics;
 import javax.swing.*;
-
 
 public class home {
     public static void main(String[] args) {
@@ -13,15 +14,15 @@ public class home {
         inicio.setResizable(false);
         inicio.setTitle("Gestor de Olimpiadas");
         inicio.setVisible(true);
-        inicio.setLayout(new GridLayout(3,3,100,100));
+        inicio.setLayout(new GridLayout(3, 3, 100, 100));
     }
-    
+
 }
 
 class Inicio extends JFrame {
-    private JButton paisBoton;
-    private JButton deportista;
-    private JButton disciplina;
+    private JButton paisButton;
+    private JButton deportistaBoton;
+    private JButton disciplinaBoton;
     private JButton paisBoton;
     private JButton deportista;
     private JButton disciplina;
@@ -33,17 +34,17 @@ class Inicio extends JFrame {
     private JButton sinDefinir6;
 
     public Inicio() {
-        paisBoton = new JButton("PAIS");
-        deportista = new JButton("DEPORTISTA");
-        disciplina = new JButton("DISCIPLINA");
-        		
+        paisButton = new JButton("PAIS");
+        deportistaBoton = new JButton("DEPORTISTA");
+        disciplinaBoton = new JButton("DISCIPLINA");
+
         ActionListener abrirDeportista = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 deportistas deportista = new deportistas();
             }
         };
 
-        deportista.addActionListener(abrirDeportista);
+        deportistaBoton.addActionListener(abrirDeportista);
 
         ActionListener abrirPais = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
@@ -51,25 +52,25 @@ class Inicio extends JFrame {
             }
         };
 
-        paisBoton.addActionListener(abrirPais);
+        paisButton.addActionListener(abrirPais);
 
-        this.add(deportista);
-        this.add(paisBoton);
-        this.add(disciplina);
-        sinDefinir1 = new JButton("SIN DEFINIR");
-        sinDefinir2 = new JButton("SIN DEFINIR");
-        sinDefinir3 = new JButton("SIN DEFINIR");
-        sinDefinir4 = new JButton("SIN DEFINIR");
-        sinDefinir5 = new JButton("SIN DEFINIR");
-        sinDefinir6 = new JButton("SIN DEFINIR");
+        this.add(deportistaBoton);
+        this.add(paisButton);
+        this.add(disciplinaBoton);
+        this.add(new JButton("SIN DEFINIR"));
+        this.add(new JButton("SIN DEFINIR"));
+        this.add(new JButton("SIN DEFINIR"));
+        this.add(new JButton("SIN DEFINIR"));
+        this.add(new JButton("SIN DEFINIR"));
+        this.add(new JButton("SIN DEFINIR"));
     }
-    
-/*  @Override
-      public void paint (Graphics g){
-      	    ImageIcon image = new ImageIcon(getClass().getResource("Images/logoOlimpic.jpg"));
-        	g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),this);
-    	    super.paint(g);
-    	  
-      }    
-}
 
+    /*
+     * @Override public void paint (Graphics g){ ImageIcon image = new
+     * ImageIcon(getClass().getResource("Images/logoOlimpic.jpg"));
+     * g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),this);
+     * super.paint(g);
+     * 
+     * }
+     */
+}
