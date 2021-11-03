@@ -2,126 +2,95 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-<<<<<<< HEAD
-=======
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
->>>>>>> aad8098 (paises)
 import javax.swing.*;
 
-public class home {
-    public static void main(String[] args) {
-        System.out.println("JE");
-        // ParteSuperior superior = new ParteSuperior();
-        Inicio inicio = new Inicio();
-    }
+public class Home extends JFrame {
 
-}
+    private JPanel panel;
+    private JButton Config, deportistaBoton, paisBoton, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
 
-class ParteSuperior extends JFrame {
+    Home() {
 
-    private JButton config;
+        this.setSize(500, 500);
+        this.setResizable(false);
+        getContentPane().setBackground(Color.orange);
 
-    public ParteSuperior() {
-        setLayout(new FlowLayout());
-        setVisible(true);
-        setSize(500, 200);
-        this.add(config);
-        ActionListener abrirConfig = new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-                Settings conf = new Settings();
-            }
-        };
+        // Botón configuración
+        Config = new JButton();
+        setLayout(new FlowLayout(FlowLayout.RIGHT));
+        Config.setIcon(new ImageIcon("src/Images/configuration.png"));
+        // Config.setBackground(Color.red);
+        this.add(Config);
 
-        config.addActionListener(abrirConfig);
-    }
-}
+        // Panel
+        panel = new JPanel();
 
-class Inicio extends JFrame {
-<<<<<<< HEAD
-    private JButton paisButton;
-    private JButton deportistaBoton;
-    private JButton disciplinaBoton;
-    private JButton paisBoton;
-    private JButton deportista;
-    private JButton disciplina;
-    private JButton sinDefinir1;
-    private JButton sinDefinir2;
-    private JButton sinDefinir3;
-    private JButton sinDefinir4;
-    private JButton sinDefinir5;
-    private JButton sinDefinir6;
-=======
-    private JButton paisBoton;
-    private JButton deportista;
-    private JButton disciplina;
-
->>>>>>> aad8098 (paises)
-
-    public Inicio() {
-
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 500);
-        setResizable(false);
-        setTitle("Gestor de Olimpiadas");
-        setVisible(true);
-        setLayout(new GridLayout(3, 3, 100, 100));
-
-        paisButton = new JButton("PAIS");
         deportistaBoton = new JButton("DEPORTISTA");
-        disciplinaBoton = new JButton("DISCIPLINA");
+        deportistaBoton.setBackground(Color.white);
+        ImageIcon iconoDepo = new ImageIcon("Icono_deportista.png");
+        deportistaBoton.setIcon(iconoDepo);
 
-        ActionListener abrirDeportista = new ActionListener() {
+        ActionListener irDeportistas = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 Deportistas deportista = new Deportistas();
             }
         };
 
-        deportistaBoton.addActionListener(abrirDeportista);
+        deportistaBoton.addActionListener(irDeportistas);
 
-        ActionListener abrirPais = new ActionListener() {
+        paisBoton = new JButton("PAIS");
+        paisBoton.setBackground(Color.white);
+        ImageIcon iconoPais = new ImageIcon("Icono_pais.png");
+        paisBoton.setIcon(iconoPais);
+
+        ActionListener irPais = new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                Country pais = new Country();
+                Pais pais = new Pais();
+
             }
         };
 
-<<<<<<< HEAD
-        paisButton.addActionListener(abrirPais);
+        paisBoton.addActionListener(irPais);
 
-        this.add(deportistaBoton);
-        this.add(paisButton);
-        this.add(disciplinaBoton);
-        this.add(new JButton("SIN DEFINIR"));
-        this.add(new JButton("SIN DEFINIR"));
-        this.add(new JButton("SIN DEFINIR"));
-        this.add(new JButton("SIN DEFINIR"));
-        this.add(new JButton("SIN DEFINIR"));
-        this.add(new JButton("SIN DEFINIR"));
+        btn3 = new JButton("DISCIPLINA");
+        btn3.setBackground(Color.white);
+        ImageIcon iconoDisc = new ImageIcon("Icono_disciplinas.png");
+        btn3.setIcon(iconoDisc);
+
+        btn4 = new JButton("SIN DEFINIR");
+        btn4.setBackground(Color.white);
+        btn5 = new JButton("SIN DEFINIR");
+        btn5.setBackground(Color.white);
+        btn6 = new JButton("SIN DEFINIR");
+        btn6.setBackground(Color.white);
+        btn7 = new JButton("SIN DEFINIR");
+        btn7.setBackground(Color.white);
+        btn8 = new JButton("SIN DEFINIR");
+        btn8.setBackground(Color.white);
+        btn9 = new JButton("SIN DEFINIR");
+        btn9.setBackground(Color.white);
+
+        panel.setLayout(new GridLayout(3, 3, 80, 80));
+        panel.add(deportistaBoton);
+        panel.add(paisBoton);
+        panel.add(btn3);
+        panel.add(btn4);
+        panel.add(btn5);
+        panel.add(btn6);
+        panel.add(btn7);
+        panel.add(btn8);
+        panel.add(btn9);
+
+        panel.setBackground(Color.lightGray);
+        this.add(panel);
+
     }
-=======
-        paisBoton.addActionListener(abrirPais);
 
-        this.add(deportista);
-        this.add(paisBoton);
-        this.add(disciplina);
+    public static void main(String[] args) {
+        Home home = new Home();
+        home.setVisible(true);
     }
-    
-@Override
-      public void paint (Graphics g){
-      	    ImageIcon image = new ImageIcon(getClass().getResource("Images/logoOlimpic.jpg"));
-        	g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),this);
-    	    super.paint(g);
-    	  
-      }  
-}
->>>>>>> aad8098 (paises)
 
-    /*
-     * @Override public void paint (Graphics g){ ImageIcon image = new
-     * ImageIcon(getClass().getResource("Images/logoOlimpic.jpg"));
-     * g.drawImage(image.getImage(),0,0,getWidth(),getHeight(),this);
-     * super.paint(g);
-     * 
-     * }
-     */
 }
